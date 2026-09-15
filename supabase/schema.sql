@@ -17,6 +17,10 @@ create table if not exists leads (
   experience text,
   current_workplace text,
   portfolio_url text,
+  timeline text,
+  client_base text,
+  services text[] not null default '{}',
+  referral_source text,
   message text,
   created_at timestamptz not null default now()
 );
@@ -26,6 +30,10 @@ create table if not exists leads (
 alter table leads add column if not exists experience text;
 alter table leads add column if not exists current_workplace text;
 alter table leads add column if not exists portfolio_url text;
+alter table leads add column if not exists timeline text;
+alter table leads add column if not exists client_base text;
+alter table leads add column if not exists services text[] not null default '{}';
+alter table leads add column if not exists referral_source text;
 
 create index if not exists leads_created_at_idx on leads (created_at desc);
 create index if not exists leads_interest_type_idx on leads (interest_type);

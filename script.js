@@ -16,6 +16,10 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  const services = Array.from(
+    form.querySelectorAll('input[name="services"]:checked')
+  ).map((el) => el.value);
+
   const payload = {
     name,
     email,
@@ -23,6 +27,10 @@ form.addEventListener("submit", async (e) => {
     experience: form.experience.value,
     current_workplace: form.current_workplace.value.trim(),
     portfolio_url: form.portfolio_url.value.trim(),
+    timeline: form.timeline.value,
+    client_base: form.client_base.value,
+    services,
+    referral_source: form.referral_source.value,
     message: form.message.value.trim(),
     company: form.company.value.trim(), // honeypot, should stay empty
   };
