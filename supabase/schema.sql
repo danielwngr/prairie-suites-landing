@@ -15,7 +15,12 @@ create table if not exists leads (
   -- pre-existing rows from before this change stay valid.
   interest_type text not null default 'tenant' check (interest_type in ('tenant', 'updates', 'other')),
   experience text,
+  -- current_workplace is unused as of the employment_type field below (the
+  -- form asks for a category via dropdown now, not a free-text name of
+  -- their employer); kept in place rather than dropped since it's harmless
+  -- and avoids a destructive column drop for no real benefit.
   current_workplace text,
+  employment_type text,
   portfolio_url text,
   timeline text,
   client_base text,
@@ -29,6 +34,7 @@ create table if not exists leads (
 -- fields existed (e.g. already-deployed production databases).
 alter table leads add column if not exists experience text;
 alter table leads add column if not exists current_workplace text;
+alter table leads add column if not exists employment_type text;
 alter table leads add column if not exists portfolio_url text;
 alter table leads add column if not exists timeline text;
 alter table leads add column if not exists client_base text;

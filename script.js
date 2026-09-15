@@ -25,7 +25,7 @@ form.addEventListener("submit", async (e) => {
     email,
     phone: form.phone.value.trim(),
     experience: form.experience.value,
-    current_workplace: form.current_workplace.value.trim(),
+    employment_type: form.employment_type.value,
     portfolio_url: form.portfolio_url.value.trim(),
     timeline: form.timeline.value,
     client_base: form.client_base.value,
