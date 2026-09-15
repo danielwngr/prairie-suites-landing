@@ -20,7 +20,9 @@ form.addEventListener("submit", async (e) => {
     name,
     email,
     phone: form.phone.value.trim(),
-    interest_type: form.interest_type.value,
+    experience: form.experience.value,
+    current_workplace: form.current_workplace.value.trim(),
+    portfolio_url: form.portfolio_url.value.trim(),
     message: form.message.value.trim(),
     company: form.company.value.trim(), // honeypot, should stay empty
   };

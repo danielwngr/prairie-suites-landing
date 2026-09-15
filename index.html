@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prairie Suites | Coming to the SW Metro in 2027</title>
-  <meta name="description" content="Prairie Suites is bringing new grooming salon suite locations to the Southwest Metro in 2027. Sign up to stay updated or express interest in leasing a suite." />
+  <meta name="description" content="Prairie Suites is bringing new grooming salon suite locations to the Southwest Metro in 2027. Groomers interested in leasing a suite can apply here." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
   <header class="site-header">
     <div class="header-inner">
       <span class="wordmark">Prairie Suites</span>
-      <a href="#signup" class="header-cta">Get updates</a>
+      <a href="#signup" class="header-cta">Get in touch</a>
     </div>
   </header>
 
@@ -27,9 +27,8 @@
           <p class="subtext">
             Prairie Suites offers private, fully equipped salon suites for independent
             grooming professionals. We're opening our first location in the
-            Southwest Metro in 2027 and want to hear from you, whether you're
-            interested in leasing a suite or just want to be the first to know when
-            we open!
+            Southwest Metro in 2027. If you're a groomer interested in leasing
+            a suite, we'd love to hear from you.
           </p>
           <a href="#signup" class="cta-button">Get in touch</a>
         </div>
@@ -87,8 +86,8 @@
 
     <section class="form-section" id="signup">
       <div class="form-card">
-        <h2>Get in touch</h2>
-        <p class="form-lede">Leave your info and we'll keep you posted as 2027 gets closer.</p>
+        <h2>Interested in a suite?</h2>
+        <p class="form-lede">Tell us a bit about your grooming business and we'll be in touch as we get closer to opening.</p>
         <form id="interest-form" novalidate>
           <div class="field">
             <label for="name">Name *</label>
@@ -106,16 +105,28 @@
           </div>
 
           <div class="field">
-            <label for="interest_type">I'm interested in</label>
-            <select id="interest_type" name="interest_type">
-              <option value="tenant">Leasing a suite as a tenant</option>
-              <option value="updates">Just keeping updated</option>
-              <option value="other">Something else</option>
+            <label for="experience">Years of grooming experience</label>
+            <select id="experience" name="experience">
+              <option value="">Prefer not to say</option>
+              <option value="Less than 1 year">Less than 1 year</option>
+              <option value="1 to 3 years">1 to 3 years</option>
+              <option value="4 to 7 years">4 to 7 years</option>
+              <option value="8+ years">8+ years</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="message">Message (optional)</label>
+            <label for="current_workplace">Where do you currently groom? (optional)</label>
+            <input type="text" id="current_workplace" name="current_workplace" placeholder="Salon name, mobile, independent, etc." autocomplete="organization" />
+          </div>
+
+          <div class="field">
+            <label for="portfolio_url">Instagram or portfolio link (optional)</label>
+            <input type="text" id="portfolio_url" name="portfolio_url" placeholder="@yourhandle or a website" />
+          </div>
+
+          <div class="field">
+            <label for="message">Anything else we should know? (optional)</label>
             <textarea id="message" name="message" rows="4"></textarea>
           </div>
 
@@ -125,7 +136,7 @@
             <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
           </div>
 
-          <button type="submit" id="submit-btn">Notify me</button>
+          <button type="submit" id="submit-btn">Submit interest</button>
 
           <p id="form-status" role="status"></p>
         </form>

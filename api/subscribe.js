@@ -6,7 +6,6 @@ const supabase = createClient(
 );
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const ALLOWED_INTEREST_TYPES = ["tenant", "updates", "other"];
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
@@ -24,7 +23,16 @@ module.exports = async (req, res) => {
   }
   body = body || {};
 
-  const { name, email, phone, interest_type, message, company } = body;
+  const {
+    name,
+    email,
+    phone,
+    experience,
+    current_workplace,
+    portfolio_url,
+    message,
+    company,
+  } = body;
 
   // Honeypot: real users never fill this in. Bots often do.
   // Pretend success so the bot doesn't learn anything, but don't write to the DB.
@@ -39,15 +47,16 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: "A valid email is required" });
   }
 
-  const cleanInterestType = ALLOWED_INTEREST_TYPES.includes(interest_type)
-    ? interest_type
-    : "other";
-
+  // This page is solely a tenant/lease interest form now (no more "just
+  // keep me updated" audience), so every row is a tenant lead by definition.
   const { error } = await supabase.from("leads").insert({
     name: name.trim(),
     email: email.trim(),
     phone: phone ? String(phone).trim() : null,
-    interest_type: cleanInterestType,
+    interest_type: "tenant",
+    experience: experience ? String(experience).trim() : null,
+    current_workplace: current_workplace ? String(current_workplace).trim() : null,
+    portfolio_url: portfolio_url ? String(portfolio_url).trim() : null,
     message: message ? String(message).trim() : null,
   });
 

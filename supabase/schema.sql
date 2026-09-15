@@ -9,10 +9,23 @@ create table if not exists leads (
   name text not null,
   email text not null,
   phone text,
-  interest_type text not null default 'other' check (interest_type in ('tenant', 'updates', 'other')),
+  -- The form only ever submits 'tenant' now (the page is solely a groomer/
+  -- tenant interest form, no more general "keep me updated" audience).
+  -- 'updates' and 'other' are kept in the check constraint only so any
+  -- pre-existing rows from before this change stay valid.
+  interest_type text not null default 'tenant' check (interest_type in ('tenant', 'updates', 'other')),
+  experience text,
+  current_workplace text,
+  portfolio_url text,
   message text,
   created_at timestamptz not null default now()
 );
+
+-- Idempotent column additions for existing tables created before these
+-- fields existed (e.g. already-deployed production databases).
+alter table leads add column if not exists experience text;
+alter table leads add column if not exists current_workplace text;
+alter table leads add column if not exists portfolio_url text;
 
 create index if not exists leads_created_at_idx on leads (created_at desc);
 create index if not exists leads_interest_type_idx on leads (interest_type);
