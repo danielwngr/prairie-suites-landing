@@ -5,70 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prairie Suites | Coming to the SW Metro in 2027</title>
   <meta name="description" content="Prairie Suites is bringing new grooming salon suite locations to the Southwest Metro in 2027. Sign up to stay updated or express interest in leasing a suite." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page">
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="wordmark">Prairie Suites</span>
+      <a href="#signup" class="header-cta">Get updates</a>
+    </div>
+  </header>
+
+  <main>
     <section class="hero">
-      <h1 class="logo">Prairie Suites</h1>
-      <p class="tagline">New locations coming to the Southwest Metro in 2027</p>
-      <p class="subtext">
-        Prairie Suites offers private, fully equipped salon suites for independent
-        beauty and grooming professionals. We're opening new locations in the
-        Southwest Metro in 2027 and want to hear from you, whether you're
-        interested in leasing a suite or just want to be the first to know when
-        we open.
-      </p>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Southwest Metro &middot; Opening 2027</p>
+          <h1>Private salon suites, built for independent professionals</h1>
+          <p class="subtext">
+            Prairie Suites offers private, fully equipped salon suites for independent
+            grooming professionals. We're opening our first location in the
+            Southwest Metro in 2027 and want to hear from you, whether you're
+            interested in leasing a suite or just want to be the first to know when
+            we open!
+          </p>
+          <a href="#signup" class="cta-button">Get in touch</a>
+        </div>
+        <div class="hero-media">
+          <img
+            src="images/hero-suite.jpg"
+            alt="A stylist working with a client in a bright, modern salon suite"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="features-inner">
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M3 9h18" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M8 14h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Private, fully equipped</h3>
+          <p>Your own suite, your own space, ready to work in from day one.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <h3>Southwest Metro location</h3>
+          <p>A new, convenient spot built specifically for this community.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20V10M12 20V4M20 20v-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Built for independence</h3>
+          <p>Run your own business, set your own hours, keep your clients.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <img
+        src="images/private-stations.jpg"
+        alt="Row of private, well-lit styling stations with mirrors"
+      />
     </section>
 
     <section class="form-section" id="signup">
-      <h2>Get in touch</h2>
-      <form id="interest-form" novalidate>
-        <div class="field">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
-        </div>
+      <div class="form-card">
+        <h2>Get in touch</h2>
+        <p class="form-lede">Leave your info and we'll keep you posted as 2027 gets closer.</p>
+        <form id="interest-form" novalidate>
+          <div class="field">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
 
-        <div class="field">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
-        </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
 
-        <div class="field">
-          <label for="phone">Phone (optional)</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" />
-        </div>
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
 
-        <div class="field">
-          <label for="interest_type">I'm interested in</label>
-          <select id="interest_type" name="interest_type">
-            <option value="tenant">Leasing a suite as a tenant</option>
-            <option value="updates">Just keeping updated</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="interest_type">I'm interested in</label>
+            <select id="interest_type" name="interest_type">
+              <option value="tenant">Leasing a suite as a tenant</option>
+              <option value="updates">Just keeping updated</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="message">Message (optional)</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-        </div>
+          <div class="field">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
 
-        <!-- Honeypot field, hidden from real users, left blank by them, bots tend to fill everything -->
-        <div class="field hp-field" aria-hidden="true">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
-        </div>
+          <!-- Honeypot field, hidden from real users, left blank by them, bots tend to fill everything -->
+          <div class="field hp-field" aria-hidden="true">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+          </div>
 
-        <button type="submit" id="submit-btn">Notify me</button>
+          <button type="submit" id="submit-btn">Notify me</button>
 
-        <p id="form-status" role="status"></p>
-      </form>
+          <p id="form-status" role="status"></p>
+        </form>
+      </div>
     </section>
-
-    <footer>
-      <p>&copy; <span id="year"></span> Prairie Suites. All rights reserved.</p>
-    </footer>
   </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Prairie Suites. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
