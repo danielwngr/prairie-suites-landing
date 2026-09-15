@@ -1,0 +1,12 @@
+{
+  "name": "prairie-suites-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prairie Suites landing page: SW Metro 2027 locations, tenant/updates interest form.",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

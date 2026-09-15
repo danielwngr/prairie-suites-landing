@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prairie Suites | Coming to the SW Metro in 2027</title>
+  <meta name="description" content="Prairie Suites is bringing new grooming salon suite locations to the Southwest Metro in 2027. Sign up to stay updated or express interest in leasing a suite." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1 class="logo">Prairie Suites</h1>
+      <p class="tagline">New locations coming to the Southwest Metro in 2027</p>
+      <p class="subtext">
+        Prairie Suites offers private, fully equipped salon suites for independent
+        beauty and grooming professionals. We're opening new locations in the
+        Southwest Metro in 2027 and want to hear from you, whether you're
+        interested in leasing a suite or just want to be the first to know when
+        we open.
+      </p>
+    </section>
+
+    <section class="form-section" id="signup">
+      <h2>Get in touch</h2>
+      <form id="interest-form" novalidate>
+        <div class="field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+
+        <div class="field">
+          <label for="interest_type">I'm interested in</label>
+          <select id="interest_type" name="interest_type">
+            <option value="tenant">Leasing a suite as a tenant</option>
+            <option value="updates">Just keeping updated</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <!-- Honeypot field, hidden from real users, left blank by them, bots tend to fill everything -->
+        <div class="field hp-field" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button type="submit" id="submit-btn">Notify me</button>
+
+        <p id="form-status" role="status"></p>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Prairie Suites. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
